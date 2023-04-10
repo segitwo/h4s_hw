@@ -30,7 +30,7 @@ object Main extends IOApp.Simple {
 
   }
 
-  private def slowServiceMiddleware(slowService: HttpRoutes[IO]) = Kleisli {
+  private def slowServiceMiddleware(slowService: HttpRoutes[IO]): HttpRoutes[IO] = Kleisli {
     (req: Request[IO]) => {
       val segments = req.uri.path.segments
       Try(
