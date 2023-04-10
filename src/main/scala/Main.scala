@@ -49,7 +49,7 @@ object Main extends IOApp.Simple {
   private val slowService = HttpRoutes.of[IO] {
     case GET -> Root / IntVar(chunk) / LongVar(total) / IntVar(time) =>
       val path = getClass.getResource("").getPath
-      val stream = Files[IO].readRange(Path(s"${path}/file.txt"), chunk, 0, total)
+      val stream = Files[IO].readRange(Path(s"$path/file.txt"), chunk, 0, total)
         .metered(time.seconds)
       Ok(stream)
   }
