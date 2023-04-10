@@ -15,6 +15,7 @@ val catsEffVersion = "3.4.8"
 
 libraryDependencies ++= Seq(
   "org.http4s" %% "http4s-ember-server" % http4sVersion,
+  "org.http4s" %% "http4s-ember-client" % http4sVersion,
   "org.http4s" %% "http4s-dsl" % http4sVersion,
   "co.fs2" %% "fs2-core" % fs2Version,
   "co.fs2" %% "fs2-io" % fs2Version,
@@ -22,4 +23,6 @@ libraryDependencies ++= Seq(
   "io.circe" %% "circe-generic" % circeVersion,
   "org.typelevel" %% "cats-core" % catsVersion,
   "org.typelevel" %% "cats-effect" % catsEffVersion,
+  "org.http4s" %% "http4s-circe" % http4sVersion,
+  "org.scalatest" %% "scalatest" % "3.2.15" % Test
 )
